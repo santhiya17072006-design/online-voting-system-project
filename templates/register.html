@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register - Online Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>User Registration</h1>
+
+    <form>
+
+        <label>Name:</label><br>
+        <input type="text" placeholder="Enter name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter email"><br><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="text" placeholder="Enter mobile number"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" placeholder="Create password"><br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <br>
+
+    <a href="/login">Already have an account? Login</a>
+
+</div>
+
+</body>
+
+</html>
