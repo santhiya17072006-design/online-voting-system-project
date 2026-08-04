@@ -1,3 +1,4 @@
+```python
 from flask import Flask, render_template, request, redirect
 import sqlite3
 import random
@@ -48,6 +49,22 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/otp", methods=["GET", "POST"])
+def otp():
+
+    if request.method == "POST":
+
+        entered_otp = request.form["otp"]
+
+        if entered_otp:
+            return redirect("/vote")
+
+        else:
+            return "Invalid OTP"
+
+    return render_template("otp.html")
+
+
 @app.route("/vote")
 def vote():
     return render_template("vote.html")
@@ -55,3 +72,4 @@ def vote():
 
 if __name__ == "__main__":
     app.run(debug=True)
+```
