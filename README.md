@@ -27,6 +27,8 @@ The system allows users to register, login, verify using OTP, and cast their vot
 - SQLite Database
 
 ## Project Structure
+
+```text
 online-voting-system
 
 ├── app.py
@@ -35,16 +37,16 @@ online-voting-system
 ├── Online Voting System (with OTP Verification).pdf
 
 ├── templates
-│ ├── index.html
-│ ├── login.html
-│ ├── register.html
-│ ├── otp.html
-│ ├── vote.html
-│ ├── vote_success.html
-│ ├── admin_login.html
-│ ├── admin_dashboard.html
-│ └── result.html
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── otp.html
+│   ├── vote.html
+│   ├── vote_success.html
+│   ├── admin_login.html
+│   ├── admin_dashboard.html
+│   └── result.html
 
 └── static
-├── style.css
-└── script.js
+    ├── style.css
+    └── script.js
