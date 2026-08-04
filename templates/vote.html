@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vote - Online Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Cast Your Vote</h1>
+
+    <form>
+
+        <label>Select Candidate:</label><br><br>
+
+        <input type="radio" name="candidate" value="Candidate 1">
+        Candidate 1
+        <br>
+
+        <input type="radio" name="candidate" value="Candidate 2">
+        Candidate 2
+        <br>
+
+        <input type="radio" name="candidate" value="Candidate 3">
+        Candidate 3
+        <br><br>
+
+        <button type="submit">Submit Vote</button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
