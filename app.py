@@ -32,20 +32,21 @@ def register():
         cursor = conn.cursor()
 
         cursor.execute(
-            "INSERT INTO users(name,email,mobile,password,otp) VALUES(?,?,?,?,?)",
+            "INSERT INTO users(name, email, mobile, password, otp) VALUES(?,?,?,?,?)",
             (name, email, mobile, password, otp)
         )
 
         conn.commit()
         conn.close()
 
-        return "OTP Sent Successfully: " + otp
+        return redirect("/otp")
 
     return render_template("register.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
+
     if request.method == "POST":
 
         email = request.form["email"]
@@ -80,7 +81,6 @@ def otp():
 
         if entered_otp:
             return redirect("/vote")
-
         else:
             return "Invalid OTP"
 
