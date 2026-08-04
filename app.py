@@ -110,6 +110,11 @@ def vote():
     return render_template("vote.html")
 
 
+@app.route("/vote-success")
+def vote_success():
+    return render_template("vote_success.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 ```
