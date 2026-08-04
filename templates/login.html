@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Online Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>User Login</h1>
+
+    <form>
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter email"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" placeholder="Enter password"><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+    <a href="/register">New User? Register</a>
+
+</div>
+
+</body>
+
+</html>
