@@ -1,31 +1,33 @@
 # Online Voting System with OTP Verification
 
-## Description
-Online Voting System with OTP Verification is a secure web-based application developed to provide a reliable and authenticated voting process.
+## Project Overview
 
-The system verifies users using OTP authentication before allowing them to vote, helping to prevent unauthorized voting.
+Online Voting System with OTP Verification is a secure web-based voting application designed to provide an authenticated and reliable voting process.
 
-## Technologies Used
-- Python
-- Flask
-- HTML
-- CSS
-- JavaScript
-- SQL Database
+The system uses OTP verification to verify users before voting, helping to improve security and prevent unauthorized voting.
 
 ## Features
+
 - User Registration
 - User Login
 - OTP Verification
 - Candidate Selection
-- Secure Vote Casting
-- Vote Management
+- Vote Casting
+- Secure Authentication
+- User-friendly Interface
 
-## Project Modules
-- User Authentication
-- OTP Verification
-- Voting Module
-- Database Management
+## Technologies Used
 
-## Author
-Sandhiya R
+Frontend:
+- HTML
+- CSS
+- JavaScript
+
+Backend:
+- Python
+- Flask
+
+Database:
+- SQL
+
+## Project Structure
