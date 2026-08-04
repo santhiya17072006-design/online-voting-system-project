@@ -1,4 +1,3 @@
-```python
 from flask import Flask, render_template, request, redirect
 import sqlite3
 import random
@@ -115,6 +114,30 @@ def vote_success():
     return render_template("vote_success.html")
 
 
+# Admin Login
+
+@app.route("/admin-login", methods=["GET", "POST"])
+def admin_login():
+
+    if request.method == "POST":
+
+        username = request.form["username"]
+        password = request.form["password"]
+
+        if username == "admin" and password == "admin123":
+            return redirect("/admin-dashboard")
+        else:
+            return "Invalid Admin Login"
+
+    return render_template("admin_login.html")
+
+
+# Admin Dashboard
+
+@app.route("/admin-dashboard")
+def admin_dashboard():
+    return render_template("admin_dashboard.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-```
