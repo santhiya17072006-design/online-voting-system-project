@@ -46,6 +46,28 @@ def register():
 
 @app.route("/login")
 def login():
+    if request.method == "POST":
+
+        email = request.form["email"]
+        password = request.form["password"]
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT * FROM users WHERE email=? AND password=?",
+            (email, password)
+        )
+
+        user = cursor.fetchone()
+
+        conn.close()
+
+        if user:
+            return redirect("/otp")
+        else:
+            return "Invalid Email or Password"
+
     return render_template("login.html")
 
 
