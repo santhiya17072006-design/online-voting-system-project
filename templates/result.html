@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Election Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Voting Results</h1>
+
+    <p>Candidate 1: {{ candidate1 }} votes</p>
+    <p>Candidate 2: {{ candidate2 }} votes</p>
+    <p>Candidate 3: {{ candidate3 }} votes</p>
+
+    <br>
+
+    <a href="/admin-dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+
+</html>
