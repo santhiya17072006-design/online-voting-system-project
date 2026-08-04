@@ -15,6 +15,8 @@ def home():
     return render_template("index.html")
 
 
+# User Registration
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
@@ -42,6 +44,8 @@ def register():
 
     return render_template("register.html")
 
+
+# User Login
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -71,6 +75,8 @@ def login():
     return render_template("login.html")
 
 
+# OTP Verification
+
 @app.route("/otp", methods=["GET", "POST"])
 def otp():
 
@@ -85,6 +91,8 @@ def otp():
 
     return render_template("otp.html")
 
+
+# Voting
 
 @app.route("/vote", methods=["GET", "POST"])
 def vote():
@@ -108,6 +116,8 @@ def vote():
 
     return render_template("vote.html")
 
+
+# Vote Success
 
 @app.route("/vote-success")
 def vote_success():
@@ -137,6 +147,46 @@ def admin_login():
 @app.route("/admin-dashboard")
 def admin_dashboard():
     return render_template("admin_dashboard.html")
+
+
+# Result Page
+
+@app.route("/result")
+def result():
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT candidate, COUNT(*) FROM votes GROUP BY candidate"
+    )
+
+    votes = cursor.fetchall()
+
+    conn.close()
+
+    candidate1 = 0
+    candidate2 = 0
+    candidate3 = 0
+
+    for vote in votes:
+
+        if vote[0] == "Candidate 1":
+            candidate1 = vote[1]
+
+        elif vote[0] == "Candidate 2":
+            candidate2 = vote[1]
+
+        elif vote[0] == "Candidate 3":
+            candidate3 = vote[1]
+
+
+    return render_template(
+        "result.html",
+        candidate1=candidate1,
+        candidate2=candidate2,
+        candidate3=candidate3
+    )
 
 
 if __name__ == "__main__":
