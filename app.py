@@ -87,8 +87,26 @@ def otp():
     return render_template("otp.html")
 
 
-@app.route("/vote")
+@app.route("/vote", methods=["GET", "POST"])
 def vote():
+
+    if request.method == "POST":
+
+        candidate = request.form["candidate"]
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "INSERT INTO votes(candidate) VALUES(?)",
+            (candidate,)
+        )
+
+        conn.commit()
+        conn.close()
+
+        return redirect("/vote-success")
+
     return render_template("vote.html")
 
 
