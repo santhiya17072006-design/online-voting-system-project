@@ -1,11 +1,12 @@
 ## Project Screenshots
 
-![Online Voting System](online-voting-system-project.png)
+### Online Voting System
 
-## Documentation
+![Online Voting System](1.png)
 
-Project report:
-- Online Voting System with OTP Verification PDF
+![Voter Login and Voting Process](2.png)
+
+![Admin Dashboard and Result](3.png)
 
 ## Author
 
